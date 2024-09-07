@@ -1,0 +1,40 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    History
+{% endblock %}
+
+
+{% block main %}
+<table class="table">
+    <thead>
+        <tr>
+            <th class="text-start">Symbol</th>
+            <th class="text-end">Shares</th>
+            <th class="text-end">Price</th>
+            <th class="text-end">Transacted</th>
+        </tr>
+    </thead>
+    <tbody>
+            {% for shi in bhai %}
+            <tr>
+                <td class="text-start">{{shi.symbol}}</td>
+                <td class="text-end">{{shi.shares}}</td>
+                <td class="text-end">{{shi.cost | usd}}</td>
+                <td class="text-end">{{shi.time}}</td>
+            </tr>
+            {% endfor %}
+
+            {% for type in salmon%}
+            <tr>
+                <td class="text-start">{{type.symbol}}</td>
+                <td class="text-end">-{{type.shares}}</td>
+                <td class="text-end">{{type.cost | usd}}</td>
+                <td class="text-end">{{type.time}}</td>
+            </tr>
+            {% endfor %}
+
+    </tbody>
+</table>
+
+{% endblock %}

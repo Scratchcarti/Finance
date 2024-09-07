@@ -1,0 +1,22 @@
+{% extends "layout.html" %}
+{% block title %}
+    Change Password
+{% endblock %}
+
+{% block main %}
+    <form action="/cpass" method="post">
+        <div class="mb-5">
+            <input name="oldpass" type="password" autocomplete="off" autofocus class="form-control mx-auto w-auto" placeholder="Old Password">
+        </div>
+
+        <div class="mb-5">
+            <input name="newpass" type="password" autocomplete="off" autofocus class="form-control mx-auto w-auto" placeholder="New Password">
+        </div>
+        <div class="mb-5">
+            <input name="confirm" type="password" autocomplete="off" autofocus class="form-control mx-auto w-auto" placeholder="Confirm New Password">
+        </div>
+
+        <button type="sumbit" class="btn btn-primary">Change Password</button>
+
+    </form>
+{% endblock %}
