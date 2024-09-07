@@ -302,3 +302,6 @@ def cpass():
 
         else:
             return apology("Old password is incorrect")
+
+if __name__ == "__main__":
+    app.run(host='0.0.0.0', port=5000, debug=False)
